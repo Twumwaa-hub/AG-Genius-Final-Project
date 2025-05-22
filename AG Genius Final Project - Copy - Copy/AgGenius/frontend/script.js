@@ -72,7 +72,6 @@ function handleRouteProtection() {
     "contact.html",
     "gallery.html",
     "services.html",
-    "index.html",
     "about.html",
     "Comments.html",
   ];
