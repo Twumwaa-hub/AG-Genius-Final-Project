@@ -1,0 +1,4 @@
+build:
+  preBuildCommand: |
+    apt-get update && \
+    apt-get install -y pkg-config coinor-libipopt-dev
