@@ -5,18 +5,15 @@ app = Flask(__name__)
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        # This is where you handle the form data after user submits the form
-        username = request.form.get('username')  # example form field
+        username = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
 
-        # Add your logic here (e.g., save user to database)
         print(f"Received signup: {username}, {email}")
 
-        # After processing, redirect or render a success page
         return redirect(url_for('home'))
 
-    # For GET requests just show the signup form
+    # Render signup.html template on GET
     return render_template('signup.html')
 
 @app.route('/')
