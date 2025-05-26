@@ -1,6 +1,7 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), 'backend'))
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -13,7 +14,6 @@ def signup():
 
         return redirect(url_for('home'))
 
-    # Render signup.html template on GET
     return render_template('signup.html')
 
 @app.route('/')
